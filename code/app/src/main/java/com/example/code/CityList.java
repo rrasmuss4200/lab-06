@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * This is a class that keeps a list of city objects
  */
-public class CityList implements Comparable<City> {
+public class CityList {
     private List<City> cities = new ArrayList<>();
 
     /**
@@ -20,12 +20,6 @@ public class CityList implements Comparable<City> {
             throw new IllegalArgumentException();
         }
         cities.add(city);
-    }
-
-    @Override
-    public int compareTo(Object o) {
-        City city = (City) o;
-        return this.city.compareTo(city.getName()); // this.city refers to the city name
     }
 
     /**

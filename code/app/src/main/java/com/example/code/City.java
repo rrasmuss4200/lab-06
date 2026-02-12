@@ -4,21 +4,21 @@ package com.example.code;
 /**
  * This is a class that defines a City
  */
-public class City {
-    private String name;
+public class City implements Comparable<City> {
+    private String city;
     private String province;
 
-    public City(String name, String province) {
-        this.name = name;
+    public City(String city, String province) {
+        this.city = city;
         this.province = province;
     }
 
-    public String getName() {
-        return name;
+    public String getCity() {
+        return city;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public String getProvince() {
@@ -29,5 +29,10 @@ public class City {
         this.province = province;
     }
 
+
+    @Override
+    public int compareTo(City city) {
+        return this.city.compareTo(city.getCity());
+    }
 }
 
