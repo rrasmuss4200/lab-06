@@ -1,5 +1,9 @@
 package com.example.code;
 
+
+/**
+ * This is a class that defines a City
+ */
 public class City {
     private String name;
     private String province;
