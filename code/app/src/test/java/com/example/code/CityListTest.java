@@ -45,4 +45,29 @@ public class CityListTest {
         assertEquals(0, city.compareTo(cityList.getCities().get(0)));
         assertEquals(0, mockCity().compareTo(cityList.getCities().get(1)));
     }
+
+    @Test
+    void hasCity() {
+        CityList list = mockCityList();
+        City added = new City("ABC", "123");
+        list.add(added);
+        assertTrue(list.hasCity(added));
+    }
+
+    @Test
+    void delete() throws Exception {
+        CityList list = mockCityList();
+        City city = new City("Edmonton", "Alberta");
+        assertThrows(Exception.class, () -> {
+            list.delete(new City("Charlottetown", "Prince Edward Island"));
+        });
+    }
+
+    @Test
+    void getSize() {
+        CityList list = new CityList();
+        assertEquals(0, list.getSize());
+        list.add(new City("Edmonton", "Alberta"));
+        assertEquals(1, list.getSize());
+    }
 }

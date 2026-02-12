@@ -32,5 +32,34 @@ public class CityList {
         Collections.sort(list);
         return list;
     }
+
+    /**
+     * This method tells us if a city is in the list
+     * @return bool saying if it's in the list
+     * @param city city to check if it's in the list
+     */
+    public boolean hasCity(City city) {
+        return cities.contains(city);
+    }
+
+    /**
+     * Deletes a city if it's in the list
+     * @param city city to delete
+     * @throws Exception saying there's no city called that to delete
+     */
+    public void delete(City city) throws Exception {
+        boolean rmd = cities.remove(city);
+        if (!rmd) {
+            throw new Exception("No city named that to remove");
+        }
+    }
+
+    /**
+     *
+     * @return int containing number for
+     */
+    public int getSize() {
+        return cities.size();
+    }
 }
 
